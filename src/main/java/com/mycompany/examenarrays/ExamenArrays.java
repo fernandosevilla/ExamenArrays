@@ -65,8 +65,8 @@ public class ExamenArrays {
         for (int i = 0; i < tabla.length; i++) {
             System.out.print(tabla[i] + "\t");
         }
+        
         System.out.println();
-
     }
     
     // EJERCICIO 1
@@ -100,6 +100,7 @@ public class ExamenArrays {
                 return true;
             }
         }
+
         return false;
     }
     
@@ -111,6 +112,7 @@ public class ExamenArrays {
         
         while (inicio <= fin) {
             int media = (inicio + fin) / 2;
+
             if (tabla[media] == valor) { // Si la posicion de la tabla es igual al valor que estamos buscando 
                 return media; // devuelve la media que seria la posicion del valor que buscamos
             } else if (tabla[media] < valor) { // Si la posicion es menor al valor buscado
@@ -119,6 +121,7 @@ public class ExamenArrays {
                 fin = media - 1; // sino seguimos buscando por la izquierda
             }
         }
+
         return -1; // no se ha encontrado el valor
     }
 }
