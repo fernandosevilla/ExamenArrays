@@ -19,31 +19,31 @@ public class ExamenArrays {
         mostrarArray(tabla);
         
         System.out.println("Insertamos el valor 10");
-        int[] tablaNueva = insertarDatos(tabla, 10);
-        mostrarArray(tablaNueva);
+        tabla = insertarDatos(tabla, 10);
+        mostrarArray(tabla);
         
         System.out.println("Insertamos el valor 22, no se debe de añadir nada porque ya existe este numero");
-        int[] tablaNueva2 = insertarDatos(tablaNueva, 22);
-        mostrarArray(tablaNueva2);
+        tabla = insertarDatos(tabla, 22);
+        mostrarArray(tabla);
         
         System.out.println("Insertamos el valor 50");
-        int[] tablaNueva3 = insertarDatos(tablaNueva2, 50);
-        mostrarArray(tablaNueva3);
+        tabla = insertarDatos(tabla, 50);
+        mostrarArray(tabla);
         
         System.out.println("Insertamos el valor 1");
-        int[] tablaNueva4 = insertarDatos(tablaNueva3, 1);
-        mostrarArray(tablaNueva4);
+        tabla = insertarDatos(tabla, 1);
+        mostrarArray(tabla);
         
         System.out.println("Insertamos el valor 4");
-        int[] tablaNueva5 = insertarDatos(tablaNueva4, 4);
-        mostrarArray(tablaNueva5);
+        tabla = insertarDatos(tabla, 4);
+        mostrarArray(tabla);
         
         System.out.println("Insertamos el valor 1000");
-        int[] tablaNueva6 = insertarDatos(tablaNueva5, 1000);
-        mostrarArray(tablaNueva6);
+        tabla = insertarDatos(tabla, 1000);
+        mostrarArray(tabla);
         System.out.println("Insertamos el valor -20");
-        int[] tablaNueva7 = insertarDatos(tablaNueva6, -20);
-        mostrarArray(tablaNueva7);
+        tabla = insertarDatos(tabla, -20);
+        mostrarArray(tabla);
 
         // EJERCICIO 2
         System.out.println("\n\nPrueba de busqueda de un array de enteros ordenado");
@@ -70,13 +70,13 @@ public class ExamenArrays {
     }
     
     // EJERCICIO 1
-    static int[] insertarDatos(int[] tabla, int valor) {
-        int[] tablaNueva = new int[tabla.length + 1]; // se hace un nuevo array incrementando 1
-        int posicion = 0;
-        
+    static int[] insertarDatos(int[] tabla, int valor) {       
         if (existe(tabla, valor)) { // Si existe el valor que se le da devuelve al tabla antes de insertar nada
             return tabla;
         } else {
+            int[] tablaNueva = new int[tabla.length + 1]; // se hace un nuevo array incrementando 1
+            int posicion = 0;
+            
             while (posicion < tabla.length && tabla[posicion] < valor) { // Mientras que la posicion sea menor que la longitud de la tabla y la posicion del array mayor que el valor
                 tablaNueva[posicion] = tabla[posicion]; // Se copia la tabla
                 posicion++; // Se incrementa 1 a la variable posicion
